@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637913763697999718
-    m_Hash: 3656339038
+      ticks: 637913775981135398
+    m_Hash: 3540733835
   m_LockFileStatus:
     m_FilePath: C:/Development/XR Bootcamp/Sneaking Game/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637913763698165324
-    m_Hash: 2745232784
+      ticks: 637913775981145406
+    m_Hash: 4052619296
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
