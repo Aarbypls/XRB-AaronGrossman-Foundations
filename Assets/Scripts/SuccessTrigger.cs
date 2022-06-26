@@ -5,11 +5,16 @@ using UnityEngine;
 
 public class SuccessTrigger : MonoBehaviour
 {
+    [SerializeField] private GameObject successCanvas;
+    [SerializeField] private GameObject successParticles;
+    
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<SuccessInteractor>())
         {
-            Debug.Log("Success!");
+            successCanvas.SetActive(true);
+            successParticles.SetActive(true);
         }
     }
 }
