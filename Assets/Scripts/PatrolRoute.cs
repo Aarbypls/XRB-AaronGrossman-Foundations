@@ -7,15 +7,15 @@ using UnityEngine;
 
 public class PatrolRoute : MonoBehaviour
 {
-    private enum PatrolType
+    public enum PatrolType
     {
         Loop = 0,
         PingPong = 1
     }
 
-    [SerializeField] private Color patrolRouteColor;
-    [SerializeField] private PatrolType patrolType;
-    [SerializeField] private List<Transform> route;
+    [SerializeField] private Color _patrolRouteColor;
+    public PatrolType patrolType;
+    public List<Transform> route;
 
     [Button("Add Patrol Point")]
     private void AddPatrolPoint()
@@ -46,7 +46,7 @@ public class PatrolRoute : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = patrolRouteColor;
+        Gizmos.color = _patrolRouteColor;
 
         for (int i = 0; i < route.Count - 1; i++)
         {
