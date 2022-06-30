@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{6697c3fd-39e4-045e-c9c1-97d70e7e70cf}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{f0ebf47d-3038-4cb5-476b-5743a4e2fcb6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.CompatibilityLayer", "Sirenix.OdinInspector.CompatibilityLayer.csproj", "{cb135b5a-ee88-b978-fdb7-f4aebf8b8633}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{6697c3fd-39e4-045e-c9c1-97d70e7e70cf}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.CompatibilityLayer.Editor", "Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj", "{27f7b529-6823-c80b-dd95-34a89d364e76}"
 EndProject
@@ -21,6 +21,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6697c3fd-39e4-045e-c9c1-97d70e7e70cf}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6697c3fd-39e4-045e-c9c1-97d70e7e70cf}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6697c3fd-39e4-045e-c9c1-97d70e7e70cf}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6697c3fd-39e4-045e-c9c1-97d70e7e70cf}.Release|Any CPU.Build.0 = Release|Any CPU
 		{f0ebf47d-3038-4cb5-476b-5743a4e2fcb6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{f0ebf47d-3038-4cb5-476b-5743a4e2fcb6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{f0ebf47d-3038-4cb5-476b-5743a4e2fcb6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -29,10 +33,6 @@ Global
 		{cb135b5a-ee88-b978-fdb7-f4aebf8b8633}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{cb135b5a-ee88-b978-fdb7-f4aebf8b8633}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{cb135b5a-ee88-b978-fdb7-f4aebf8b8633}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6697c3fd-39e4-045e-c9c1-97d70e7e70cf}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6697c3fd-39e4-045e-c9c1-97d70e7e70cf}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6697c3fd-39e4-045e-c9c1-97d70e7e70cf}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6697c3fd-39e4-045e-c9c1-97d70e7e70cf}.Release|Any CPU.Build.0 = Release|Any CPU
 		{27f7b529-6823-c80b-dd95-34a89d364e76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{27f7b529-6823-c80b-dd95-34a89d364e76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27f7b529-6823-c80b-dd95-34a89d364e76}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -27,13 +27,11 @@ public class Crouch : MonoBehaviour
         {
             _crouched = false;
             _characterController.height = _originalHeight;
-            Debug.Log("Player got up");
         }
         else
         {
             _crouched = true;
             _characterController.height = _crouchHeight;
-            Debug.Log("Player crouched");
         }
     }
 }
