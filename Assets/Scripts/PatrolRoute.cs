@@ -13,7 +13,7 @@ public class PatrolRoute : MonoBehaviour
         PingPong = 1
     }
 
-    [SerializeField] private Color _patrolRouteColor;
+    [SerializeField] private Color _patrolRouteColor = Color.green;
     public PatrolType patrolType;
     public List<Transform> route;
 
@@ -42,10 +42,7 @@ public class PatrolRoute : MonoBehaviour
         #if UNITY_EDITOR
             Handles.Label(transform.position, gameObject.name);
         #endif
-    }
-
-    private void OnDrawGizmosSelected()
-    {
+        
         Gizmos.color = _patrolRouteColor;
 
         for (int i = 0; i < route.Count - 1; i++)
@@ -56,6 +53,6 @@ public class PatrolRoute : MonoBehaviour
         if (patrolType == PatrolType.Loop)
         {
             Gizmos.DrawLine(route[route.Count - 1].position, route[0].position);
-        }
+        }        
     }
 }

@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 7602987390722857662}
   - component: {fileID: 7602987390722857663}
   - component: {fileID: 7602987390722857600}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
