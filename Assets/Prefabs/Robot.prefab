@@ -72,7 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ce01f3c35823c4c80fc6cc6e93068c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gizmoColor: {r: 1, g: 0, b: 0, a: 1}
+  visibleObjects: []
+  _handlesColor: {r: 1, g: 0, b: 0, a: 1}
   _viewRadius: 6
   _viewAngle: 30
   _creature: {fileID: 327471160}
@@ -94,6 +95,7 @@ MonoBehaviour:
   _agent: {fileID: 7716304182452335769}
   _threshold: 0.5
   _patrolRoute: {fileID: 0}
+  _fieldOfView: {fileID: 570711214732129421}
 --- !u!114 &7716304182452335772
 MonoBehaviour:
   m_ObjectHideFlags: 0
