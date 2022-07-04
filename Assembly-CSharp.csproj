@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\Player\Crouch.cs" />
      <Compile Include="Assets\Scripts\Enemy\FieldOfView.cs" />
      <Compile Include="Assets\Scripts\SoundEmitter.cs" />
+     <Compile Include="Assets\Scripts\Player\Grab.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

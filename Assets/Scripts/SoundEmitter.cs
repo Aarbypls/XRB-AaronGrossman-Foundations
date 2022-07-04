@@ -23,7 +23,6 @@ public class SoundEmitter : MonoBehaviour
         {
             _audioSource.Play();
             
-            Debug.Log("Sound emitter collided with " + other.gameObject.name);
             Collider[] _colliders = Physics.OverlapSphere(transform.position, _soundRadius);
 
             foreach (var col in _colliders)
