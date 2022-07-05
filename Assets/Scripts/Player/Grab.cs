@@ -65,6 +65,11 @@ public class Grab : MonoBehaviour
         }
         
         _grabbedObject.AddForce(_cameraPosition.forward * _throwForce, ForceMode.Impulse);
+
+        if (_grabbedObject.TryGetComponent(out ProximityMine proximityMine))
+        {
+            proximityMine.SetThrownStatus(true);
+        }
         
         DropGrabbedObject();
     }
