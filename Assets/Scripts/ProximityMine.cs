@@ -44,7 +44,7 @@ public class ProximityMine : MonoBehaviour
                             continue;
                         }
 
-                        _enemyController.enabled = false;
+                        _enemyController.ActivateRagdoll();
                         _explosion.gameObject.SetActive(true);
                     }
                 }
