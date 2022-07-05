@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - Grabbable
+  - Box
   layers:
   - Default
   - TransparentFX

@@ -33,7 +33,7 @@ public class SoundEmitter : MonoBehaviour
                     float randForEnemyStateChange = Random.Range(1f, 100f);
                     
                     // TO-DO: Change the 2f number to be more realistic, this is for testing
-                    if (randForEnemyStateChange < 2f)
+                    if (randForEnemyStateChange < 50f)
                     {
                         enemyController.SetInvestigatePoint(transform.position);
                     }

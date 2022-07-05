@@ -19,6 +19,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private FieldOfView _fieldOfView;
     [SerializeField] private EnemyState _state = EnemyState.Patrol;
     [SerializeField] private float _partnerInvestigationRadius = 100f;
+    [SerializeField] private GameObject _ragdoll;
+    [SerializeField] private GameObject _mainBody;
 
     private bool _moving = false;
     private Transform _currentPoint;
@@ -37,7 +39,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_fieldOfView.visibleObjects.Count > 0)
+        if (_fieldOfView.visibleObjects.Count > 0 && !PlayerInvisible())
         {
             SetInvestigatePoint(_fieldOfView.visibleObjects[0].position);
         }
@@ -54,6 +56,16 @@ public class EnemyController : MonoBehaviour
         {
             UpdateInvestigateWithPartner();
         }
+    }
+
+    private bool PlayerInvisible()
+    {
+        if (_fieldOfView.visibleObjects[0].gameObject.TryGetComponent(out Grab grab) && grab._wearingBox)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private void UpdateInvestigateWithPartner()
@@ -161,5 +173,11 @@ public class EnemyController : MonoBehaviour
         }
             
         _currentPoint = _patrolRoute.route[_routeIndex];
+    }
+
+    public void ActivateRagdoll()
+    {
+        _ragdoll.SetActive(true);
+        _mainBody.SetActive(false);
     }
 }
