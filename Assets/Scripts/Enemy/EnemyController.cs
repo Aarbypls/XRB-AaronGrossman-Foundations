@@ -8,7 +8,8 @@ public class EnemyController : MonoBehaviour
     enum EnemyState
     {
         Patrol = 0,
-        Investigate = 1
+        Investigate = 1,
+        InvestigateWithPartner = 2
     }
     
     [SerializeField] private NavMeshAgent _agent;
@@ -17,12 +18,14 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private PatrolRoute _patrolRoute;
     [SerializeField] private FieldOfView _fieldOfView;
     [SerializeField] private EnemyState _state = EnemyState.Patrol;
+    [SerializeField] private float _partnerInvestigationRadius = 100f;
 
     private bool _moving = false;
     private Transform _currentPoint;
     private int _routeIndex = 0;
     private bool _forwardsAlongPath = true;
     private Vector3 _investigationPoint;
+    private EnemyController _partnerController;
     private float _waitTimer = 0f;
     
     // Start is called before the first frame update
@@ -47,6 +50,19 @@ public class EnemyController : MonoBehaviour
         {
             UpdateInvestigate();
         }
+        else if (_state == EnemyState.InvestigateWithPartner)
+        {
+            UpdateInvestigateWithPartner();
+        }
+    }
+
+    private void UpdateInvestigateWithPartner()
+    {
+        if (Vector3.Distance(transform.position, _partnerController.transform.position) < _threshold)
+        {
+            _partnerController.SetInvestigatePoint(_investigationPoint);
+            SetInvestigatePoint(_investigationPoint);
+        }
     }
 
     public void SetInvestigatePoint(Vector3 investigationPoint)
@@ -54,6 +70,27 @@ public class EnemyController : MonoBehaviour
         _state = EnemyState.Investigate;
         _investigationPoint = investigationPoint;
         _agent.SetDestination(_investigationPoint);
+    }
+
+    public bool FindPartnerForInvestigation(Vector3 investigationPoint)
+    {
+        _investigationPoint = investigationPoint;
+        
+        Collider[] partnersInRadius =
+            Physics.OverlapSphere(transform.position, _partnerInvestigationRadius);
+
+        foreach (var target in partnersInRadius)
+        {
+            if (target.transform.position != transform.position && target.TryGetComponent(out EnemyController enemyController))
+            {
+                _state = EnemyState.InvestigateWithPartner;
+                _partnerController = enemyController;
+                _agent.SetDestination(_partnerController.transform.position);
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private void UpdateInvestigate()

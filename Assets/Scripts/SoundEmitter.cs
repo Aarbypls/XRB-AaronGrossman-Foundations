@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(AudioSource))]
 public class SoundEmitter : MonoBehaviour
@@ -29,7 +30,20 @@ public class SoundEmitter : MonoBehaviour
             {
                 if (col.TryGetComponent(out EnemyController enemyController))
                 {
-                    enemyController.SetInvestigatePoint(transform.position);
+                    float randForEnemyStateChange = Random.Range(1f, 100f);
+                    
+                    // TO-DO: Change the 2f number to be more realistic, this is for testing
+                    if (randForEnemyStateChange < 2f)
+                    {
+                        enemyController.SetInvestigatePoint(transform.position);
+                    }
+                    else
+                    {
+                        if (!enemyController.FindPartnerForInvestigation(transform.position))
+                        {
+                            enemyController.SetInvestigatePoint(transform.position);
+                        }
+                    }
                 }
             }   
         }
