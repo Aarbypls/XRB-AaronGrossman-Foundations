@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class EnemyController : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private PatrolRoute _patrolRoute;
     [SerializeField] private FieldOfView _fieldOfView;
     [SerializeField] private EnemyState _state = EnemyState.Patrol;
+
+    public UnityEvent<Transform> onPlayerFound;
+    public UnityEvent onInvestigate;
+    public UnityEvent onReturnToPatrol;
 
     private bool _moving = false;
     private Transform _currentPoint;
@@ -39,7 +44,7 @@ public class EnemyController : MonoBehaviour
         
         if (_fieldOfView.visibleObjects.Count > 0)
         {
-            SetInvestigatePoint(_fieldOfView.visibleObjects[0].position);
+            PlayerFound(_fieldOfView.visibleObjects[0].position);
         }
         
         if (_state == EnemyState.Patrol)
@@ -52,11 +57,25 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void SetInvestigatePoint(Vector3 investigationPoint)
+    public void InvestigatePoint(Vector3 investigationPoint)
+    {
+        SetInvestigationPoint(investigationPoint);
+        
+        onInvestigate.Invoke();
+    }
+
+    private void SetInvestigationPoint(Vector3 investigationPoint)
     {
         _state = EnemyState.Investigate;
         _investigationPoint = investigationPoint;
         _agent.SetDestination(_investigationPoint);
+    }
+
+    private void PlayerFound(Vector3 investigationPoint)
+    {
+        SetInvestigationPoint(investigationPoint);
+        
+        onPlayerFound.Invoke(_fieldOfView.creature.head);
     }
 
     private void UpdateInvestigate()
@@ -76,6 +95,8 @@ public class EnemyController : MonoBehaviour
         _state = EnemyState.Patrol;
         _waitTimer = 0f;
         _moving = false;
+        
+        onReturnToPatrol.Invoke();
     }
 
     private void UpdatePatrol()
