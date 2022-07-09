@@ -51,6 +51,8 @@ public class GameEventManager : MonoBehaviour
         _canvasGroup.alpha = 0;
         _failedPanel.SetActive(false);
         _successPanel.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void EnemyReturnToPatrol()

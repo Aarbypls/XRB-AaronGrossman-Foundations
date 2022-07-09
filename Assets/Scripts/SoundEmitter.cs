@@ -8,6 +8,8 @@ public class SoundEmitter : MonoBehaviour
 {
     [SerializeField] private float _soundRadius = 6.5f;
     [SerializeField] private float _impulseThreshold = 2f;
+
+    private float _collisionTimer = 0f;
     
     private AudioSource _audioSource;
     
@@ -19,6 +21,11 @@ public class SoundEmitter : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        if (_collisionTimer < 1f)
+        {
+            return;
+        }
+        
         if (other.impulse.magnitude > _impulseThreshold || other.gameObject.CompareTag("Player"))
         {
             _audioSource.Play();
@@ -32,6 +39,14 @@ public class SoundEmitter : MonoBehaviour
                     enemyController.InvestigatePoint(transform.position);
                 }
             }   
+        }
+    }
+
+    private void Update()
+    {
+        if (_collisionTimer < 1f)
+        {
+            _collisionTimer += Time.deltaTime;
         }
     }
 
