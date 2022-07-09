@@ -103,6 +103,7 @@ public class GameEventManager : MonoBehaviour
         }
         
         _bgmSource.clip = newBgm;
+        _bgmSource.volume = .25f;
         _bgmSource.Play();
     }
 
