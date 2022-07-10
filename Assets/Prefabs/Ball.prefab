@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8338549715405327249}
   - component: {fileID: 8338549715405327255}
   - component: {fileID: 8338549715405327252}
+  - component: {fileID: 5229135156838980088}
   m_Layer: 6
   m_Name: Ball
   m_TagString: Grabbable
@@ -240,6 +241,18 @@ MonoBehaviour:
         m_CallState: 2
   _soundRadius: 9
   _impulseThreshold: 1
+--- !u!114 &5229135156838980088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8338549715405327246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af68ad386dd46ac4eb10ab96a031e1ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6202422003820421032
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -34,6 +34,11 @@ public class SoundEmitter : MonoBehaviour
             _audioSource.Play();
             
             onEmitSound.Invoke();
+
+            if (other.gameObject.GetComponent<EnemyController>())
+            {
+                return;
+            }
             
             Collider[] _colliders = Physics.OverlapSphere(transform.position, _soundRadius);
 

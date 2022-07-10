@@ -19,10 +19,14 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private PatrolRoute _patrolRoute;
     [SerializeField] private FieldOfView _fieldOfView;
     [SerializeField] private EnemyState _state = EnemyState.Patrol;
+    [SerializeField] private GameObject _robotParts;
+    [SerializeField] private GameObject _mainBody;
+    [SerializeField] private GameObject _fovMesh;
 
     public UnityEvent<Transform> onPlayerFound;
     public UnityEvent onInvestigate;
     public UnityEvent onReturnToPatrol;
+    public bool _exploded = false;
 
     private bool _moving = false;
     private Transform _currentPoint;
@@ -41,6 +45,11 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_exploded)
+        {
+            return;
+        }
+        
         _animator.SetFloat("Speed", _agent.velocity.magnitude);
         
         if (_fieldOfView.visibleObjects.Count > 0)
@@ -60,6 +69,11 @@ public class EnemyController : MonoBehaviour
 
     public void InvestigatePoint(Vector3 investigationPoint)
     {
+        if (_exploded)
+        {
+            return;
+        }
+        
         SetInvestigationPoint(investigationPoint);
         
         onInvestigate.Invoke();
@@ -67,6 +81,11 @@ public class EnemyController : MonoBehaviour
 
     private void SetInvestigationPoint(Vector3 investigationPoint)
     {
+        if (_exploded)
+        {
+            return;
+        }
+        
         _state = EnemyState.Investigate;
         _investigationPoint = investigationPoint;
         _agent.SetDestination(_investigationPoint);
@@ -74,7 +93,7 @@ public class EnemyController : MonoBehaviour
 
     private void PlayerFound(Vector3 investigationPoint)
     {
-        if (_playerFound)
+        if (_playerFound || _exploded)
         {
             return;
         }
@@ -88,6 +107,11 @@ public class EnemyController : MonoBehaviour
 
     private void UpdateInvestigate()
     {
+        if (_exploded)
+        {
+            return;
+        }
+        
         if (Vector3.Distance(transform.position, _investigationPoint) < _threshold)
         {
             _waitTimer += Time.deltaTime;
@@ -100,6 +124,11 @@ public class EnemyController : MonoBehaviour
 
     private void ReturnToPatrol()
     {
+        if (_exploded)
+        {
+            return;
+        }
+        
         _state = EnemyState.Patrol;
         _waitTimer = 0f;
         _moving = false;
@@ -109,6 +138,11 @@ public class EnemyController : MonoBehaviour
 
     private void UpdatePatrol()
     {
+        if (_exploded)
+        {
+            return;
+        }
+        
         if (!_moving)
         {
             SetNextPatrolPoint();
@@ -125,6 +159,11 @@ public class EnemyController : MonoBehaviour
 
     private void SetNextPatrolPoint()
     {
+        if (_exploded)
+        {
+            return;
+        }
+        
         if (_forwardsAlongPath)
         {
             _routeIndex++;
@@ -156,5 +195,13 @@ public class EnemyController : MonoBehaviour
         }
             
         _currentPoint = _patrolRoute.route[_routeIndex];
+    }
+
+    public void Explode()
+    {
+        _robotParts.SetActive(true);
+        _mainBody.SetActive(false);
+        _fovMesh.SetActive(false);
+        _exploded = true;
     }
 }
