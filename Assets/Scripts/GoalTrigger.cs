@@ -16,6 +16,11 @@ public class GoalTrigger : MonoBehaviour
             return;
         }
         
-        onGoalReached.Invoke();
+        Inventory playerInventory = other.GetComponent<Inventory>();
+
+        if (playerInventory.HasBlueKey() && playerInventory.HasRedKey())
+        {
+            onGoalReached.Invoke();
+        }
     }
 }
