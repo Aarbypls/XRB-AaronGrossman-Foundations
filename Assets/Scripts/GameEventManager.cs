@@ -45,7 +45,7 @@ public class GameEventManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("There is no player (or object with tag \"Player\" in the scene.");
+            // Debug.LogWarning("There is no player (or object) with tag \"Player\" in the scene.");
         }
 
         _canvasGroup.alpha = 0;

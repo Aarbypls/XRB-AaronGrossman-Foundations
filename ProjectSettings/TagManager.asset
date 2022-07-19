@@ -7,6 +7,8 @@ TagManager:
   - CinemachineTarget
   - Grabbable
   - Keycard
+  - Target
+  - TargetReset
   layers:
   - Default
   - TransparentFX
