@@ -9,6 +9,8 @@ TagManager:
   - Keycard
   - Target
   - TargetReset
+  - StackCube
+  - Fake Stack Cube
   layers:
   - Default
   - TransparentFX
