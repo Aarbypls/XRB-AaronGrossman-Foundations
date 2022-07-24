@@ -7,6 +7,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 584413023, guid: 7b641e769fe934848ac6141b0016d004, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 584413023, guid: 7b641e769fe934848ac6141b0016d004, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.046
+      objectReference: {fileID: 0}
+    - target: {fileID: 584413023, guid: 7b641e769fe934848ac6141b0016d004, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 584413023, guid: 7b641e769fe934848ac6141b0016d004, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584413023, guid: 7b641e769fe934848ac6141b0016d004, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584413023, guid: 7b641e769fe934848ac6141b0016d004, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584413023, guid: 7b641e769fe934848ac6141b0016d004, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1813997759, guid: 7b641e769fe934848ac6141b0016d004, type: 3}
+      propertyPath: _controller
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2829926007932473208, guid: 7b641e769fe934848ac6141b0016d004, type: 3}
       propertyPath: m_Name
       value: RightHand Variant
@@ -70,6 +102,18 @@ PrefabInstance:
     - target: {fileID: 6797805165308724308, guid: 7b641e769fe934848ac6141b0016d004, type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937286404659759583, guid: 7b641e769fe934848ac6141b0016d004, type: 3}
+      propertyPath: m_Drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937286404659759583, guid: 7b641e769fe934848ac6141b0016d004, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937286404659759583, guid: 7b641e769fe934848ac6141b0016d004, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8340483955629343875, guid: 7b641e769fe934848ac6141b0016d004, type: 3}
       propertyPath: m_LocalScale.x
