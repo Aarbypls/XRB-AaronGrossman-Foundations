@@ -30,7 +30,11 @@ public class FieldOfView : MonoBehaviour
         {
             if (!target.TryGetComponent(out Creature targetCreature)) // why is this coded like this?
             {
-                continue;
+                targetCreature = target.GetComponentInParent<Creature>();
+                if (!targetCreature)
+                {
+                    continue;
+                }
             }
 
             if (creature.team == targetCreature.team)
@@ -59,7 +63,8 @@ public class FieldOfView : MonoBehaviour
             }
         }
     }
-
+    
+    #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         Handles.color = _handlesColor;
@@ -72,4 +77,5 @@ public class FieldOfView : MonoBehaviour
         Handles.DrawLine(transform.position, transform.position + (lineA * _viewRadius));
         Handles.DrawLine(transform.position, transform.position + (lineB * _viewRadius));
     }
+    #endif
 }
