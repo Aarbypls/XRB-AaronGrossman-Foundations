@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class GameEventManager : MonoBehaviour
 {
+    [Header("Accessibility")] 
+    public Handed _handedness;
+    
     [Header("UI")]
     [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private GameObject _failedPanel;
