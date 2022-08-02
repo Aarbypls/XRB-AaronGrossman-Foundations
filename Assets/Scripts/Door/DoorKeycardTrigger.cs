@@ -53,7 +53,7 @@ public class DoorKeycardTrigger : DoorTrigger
         CloseDoor();
     }
     
-    protected virtual void OnTriggerExit(Collider other)
+    protected new virtual void OnTriggerExit(Collider other)
     {
         if (_isOpen)
         {
