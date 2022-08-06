@@ -60,7 +60,7 @@ public class GameEventManager : MonoBehaviour
             _playerInput = player.GetComponent<PlayerInput>();
             _firstPersonController = player.GetComponent<FirstPersonController>();
         }
-        else
+        else if (!player && gameMode == GameMode.FP)
         {
             Debug.LogWarning("There is no player (or object with tag \"Player\" in the scene.");
         }
