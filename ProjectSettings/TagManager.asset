@@ -9,6 +9,7 @@ TagManager:
   - Keycard
   - Ammo
   - AxeWall
+  - GravityBall
   layers:
   - Default
   - TransparentFX
