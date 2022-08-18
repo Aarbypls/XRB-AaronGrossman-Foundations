@@ -477,6 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _controller: {fileID: 6527355870919063995}
   _animator: {fileID: 2340681418137182186}
+  _menuManager: {fileID: 0}
 --- !u!114 &6527355870919063993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1357,6 +1358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _controller: {fileID: 6527355871696815889}
   _animator: {fileID: 1841984424365714350}
+  _menuManager: {fileID: 0}
 --- !u!114 &6527355871696815891
 MonoBehaviour:
   m_ObjectHideFlags: 0
