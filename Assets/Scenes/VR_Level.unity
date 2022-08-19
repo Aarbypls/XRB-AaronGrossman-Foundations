@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 7d1d88fede3e5dd49a96aeed4123856d, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 2f866bb48a7a36448bb743304130ed40, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.20597708, g: 0.07885744, b: 0.25742498, a: 1}
+  m_IndirectSpecularColor: {r: 0.1824859, g: 0.18709876, b: 0.1607864, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 56445b0252c394c458a523418cf54c28, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 8ab7453cb85fbdd428ff881498d0cf9a, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 893735e87d6b5b342aa41b2d6ad46d2c, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -59559,7 +59559,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 6.91e-43, y: 1.3312852e-22, z: 4.5905e-41, w: 0}
+  m_BoundingSphereOverride: {x: 3.0349071e+32, y: -6.970748e+21, z: 4.5905e-41, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -73835,6 +73835,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6527355870380884492, guid: f6de54d6c155c8941b7339b53262ef40, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6527355870380884494, guid: f6de54d6c155c8941b7339b53262ef40, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6527355870380884722, guid: f6de54d6c155c8941b7339b53262ef40, type: 3}
