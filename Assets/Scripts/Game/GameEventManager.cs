@@ -154,11 +154,15 @@ public class GameEventManager : MonoBehaviour
     public void GoalReached()
     {
         _isGoalReached = true;
-        _isFadingIn = true;
-        
+
         _successPanel.SetActive(true);
 
-        DeactivateInput();
+        if (gameMode == GameMode.FP)
+        {
+            _isFadingIn = true;
+            DeactivateInput();
+        }
+        
         PlayBGM(_successMusic);
     }
 

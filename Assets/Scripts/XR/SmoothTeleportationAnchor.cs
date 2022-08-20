@@ -15,7 +15,6 @@ namespace XR
 
         protected override void OnSelectEntered(SelectEnterEventArgs args)
         {
-            Debug.Log("On Select Entered");
             BeginTeleport(args.interactor);
         }
 

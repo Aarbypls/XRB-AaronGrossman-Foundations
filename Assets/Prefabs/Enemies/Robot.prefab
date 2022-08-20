@@ -4981,7 +4981,7 @@ MonoBehaviour:
   _animator: {fileID: 7716304182728877218}
   _threshold: 1
   _waitTime: 2
-  _stunnedTime: 3
+  _stunnedTime: 10
   _patrolRoute: {fileID: 0}
   _fieldOfView: {fileID: 570711214732129421}
   _state: 0

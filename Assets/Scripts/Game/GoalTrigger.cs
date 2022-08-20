@@ -11,7 +11,7 @@ public class GoalTrigger : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.CompareTag("Player"))
+        if (!other.GetComponentInParent<Rigidbody>().gameObject.CompareTag("Player")) // Player
         {
             return;
         }
