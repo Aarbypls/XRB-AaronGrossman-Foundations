@@ -23,7 +23,6 @@ public class ViewCulling : MonoBehaviour
         var enemiesOutOfViewNow = _enemiesInViewLastFrame.Except(_fov.visibleObjects).ToList();
         foreach (var enemy in enemiesOutOfViewNow)
         {
-            Debug.Log(enemy.name + "out");
             var rend = enemy.GetComponentInChildren<SkinnedMeshRenderer>();
             if (rend)
             {
@@ -35,7 +34,6 @@ public class ViewCulling : MonoBehaviour
         var enemiesInViewNow = _fov.visibleObjects.Except(_enemiesInViewLastFrame).ToList();
         foreach (var enemy in enemiesInViewNow)
         {
-            Debug.Log(enemy.name + "in");
             var rend = enemy.GetComponentInChildren<SkinnedMeshRenderer>();
             if (rend)
             {

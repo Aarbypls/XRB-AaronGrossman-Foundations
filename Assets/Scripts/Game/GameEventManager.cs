@@ -70,11 +70,13 @@ public class GameEventManager : MonoBehaviour
             Debug.LogWarning("There is no player (or object with tag \"Player\" in the scene.");
         }
 
-        _canvasGroup.alpha = 0;
+        if (_canvasGroup)
+        {
+            _canvasGroup.alpha = 0;
+        }
+        
         _failedPanel.SetActive(false);
         _successPanel.SetActive(false);
-        
-        ResetShaderValues();
         
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -82,6 +84,8 @@ public class GameEventManager : MonoBehaviour
         _initialSkyboxAtmosphereThickness = _skyboxMaterial.GetFloat("_AtmosphereThickness");
         _initialSkyboxColor = _skyboxMaterial.GetColor("_SkyTint");
         _initialSkyboxExposure = _skyboxMaterial.GetFloat("_Exposure");
+        
+        ResetShaderValues();
     }
 
     private void EnemyReturnToPatrol()
@@ -205,6 +209,11 @@ public class GameEventManager : MonoBehaviour
         
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    
+    public void ChangeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);    
+    }
 
     // Update is called once per frame
     void Update()
@@ -223,8 +232,11 @@ public class GameEventManager : MonoBehaviour
                 _fadeLevel -= Time.deltaTime / _canvasFadeTime;
             }
         }
-        
-        _canvasGroup.alpha = _fadeLevel;
+
+        if (_canvasGroup)
+        {
+            _canvasGroup.alpha = _fadeLevel;
+        }
     }
 
     public void ToggleDominantHand()
