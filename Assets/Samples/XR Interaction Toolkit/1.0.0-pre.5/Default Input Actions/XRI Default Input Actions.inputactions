@@ -162,6 +162,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "OpenDebugMenu",
+                    "type": "Button",
+                    "id": "d429b04f-78d2-4e43-8906-2c5533ed3556",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -505,6 +513,17 @@
                     "action": "OpenMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3d857285-fee6-48b2-97ca-f17d29202b78",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "OpenDebugMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -620,6 +639,14 @@
                     "name": "OpenMenu",
                     "type": "Button",
                     "id": "86ea3949-b51e-496a-bf41-16db9a213ae4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "OpenDebugMenu",
+                    "type": "Button",
+                    "id": "15475ce2-13db-4f10-b250-84049fd1a3aa",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -953,6 +980,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "OpenMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6f06bc9a-18ab-4984-8930-b5c55763c48e",
+                    "path": "<XRController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "OpenDebugMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

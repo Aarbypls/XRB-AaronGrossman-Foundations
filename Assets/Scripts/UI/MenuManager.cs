@@ -9,6 +9,11 @@ namespace UI
     {
         [SerializeField] private List<GameObject> _windows;
         [SerializeField] private TMP_Text _dominantHandText;
+        [SerializeField] private GameObject _lightsObject;
+        [SerializeField] private List<GameObject> _cubes;
+        [SerializeField] private Material _mat1;
+        [SerializeField] private Material _mat2;
+        [SerializeField] private Material _mat3;
 
         private void Awake()
         {
@@ -24,6 +29,77 @@ namespace UI
             }
         }
 
+        public void ToggleLight()
+        {
+            if (_lightsObject.activeSelf)
+            {
+                _lightsObject.SetActive(false);
+            }
+            else
+            {
+                _lightsObject.SetActive(true);
+            }
+        }
+        
+        public void ToggleLightColor(string color)
+        {
+            switch (color)
+            {
+                case "red":
+                    _lightsObject.GetComponentInChildren<Light>().color = Color.red;
+                    break;
+                case "yellow":
+                    _lightsObject.GetComponentInChildren<Light>().color = Color.yellow;
+                    break;
+                case "blue":
+                    _lightsObject.GetComponentInChildren<Light>().color = Color.blue;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public void ToggleMaterial(int materialNumber)
+        {
+            switch (materialNumber)
+            {
+                case 1:
+                    foreach (GameObject cube in _cubes)
+                    {
+                        cube.GetComponent<Renderer>().material = _mat1;
+                    }
+                    break;
+                case 2:
+                    foreach (GameObject cube in _cubes)
+                    {
+                        cube.GetComponent<Renderer>().material = _mat2;
+                    }                    
+                    break;
+                case 3:
+                    foreach (GameObject cube in _cubes)
+                    {
+                        cube.GetComponent<Renderer>().material = _mat3;
+                    }
+                    break;
+            }
+        }
+
+        public void ToggleGravity()
+        {
+            foreach (GameObject cube in _cubes)
+            {
+                var rb = cube.GetComponent<Rigidbody>();
+                if (rb.useGravity)
+                {
+                    cube.GetComponent<Rigidbody>().useGravity = false;
+                }
+                else
+                {
+                    cube.GetComponent<Rigidbody>().useGravity = true;
+                }
+            }
+        }
+        
         public void OpenWindow(int index)
         {
             CloseAllWindows();
